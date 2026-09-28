@@ -174,7 +174,7 @@ PGAdmin provides a web-based interface to manage the PostgreSQL database without
 - Updates to application data (e.g., shell records, submodels, submodel element values) are reflected in what the Plugin serves.
 - Submodel and shell templates are managed by BaSyx services and are not modified via PostgreSQL.
 
---
+---
 
 > [!IMPORTANT]
 > **DPP plugin upgrade: PostgreSQL volume reset required**
