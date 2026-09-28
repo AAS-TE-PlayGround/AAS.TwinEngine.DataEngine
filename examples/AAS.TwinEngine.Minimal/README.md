@@ -128,7 +128,7 @@ The docker-compose setup includes the following services, all running on a share
 | **twinengine-dataengine**        | -    | `ghcr.io/aas-twinengine/dataengine:v1.2.0`         | Main TwinEngine DataEngine service    |
 | **template-registry-repository** | -    | `eclipsebasyx/aasenvironment-go:1.0.12`            | AAS Environment & Submodel repository |
 | **dpp-plugin**                   | -    | `ghcr.io/aas-twinengine/plugindpp:v1.2.0`          | Digital Product Passport Plugin       |
-| **basyx_configuration**                   | -    | `eclipsebasyx/basyxconfigurationservice-go:1.0.12` | BasyX Go configuration service        |
+| **basyx_configuration**          | -    | `eclipsebasyx/basyxconfigurationservice-go:1.0.12` | BasyX Go configuration service        |
 | **aas-web-ui**                   | -    | `eclipsebasyx/aas-gui:v2-260801`                   | Web User Interface (served via nginx) |
 
 ### Infrastructure Services
@@ -174,7 +174,17 @@ PGAdmin provides a web-based interface to manage the PostgreSQL database without
 - Updates to application data (e.g., shell records, submodels, submodel element values) are reflected in what the Plugin serves.
 - Submodel and shell templates are managed by BaSyx services and are not modified via PostgreSQL.
 
---
+---
+
+> [!IMPORTANT]
+> **DPP plugin upgrade: PostgreSQL volume reset required**
+>
+> If you are upgrading from a previous version of the DPP plugin, the PostgreSQL schema has changed. Remove the existing PostgreSQL volume before restarting:
+>
+> ```bash
+> docker compose down -v
+> docker compose up -d
+> ```
 
 ## Additional Notes
 
