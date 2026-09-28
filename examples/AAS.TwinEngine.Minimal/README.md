@@ -176,6 +176,19 @@ PGAdmin provides a web-based interface to manage the PostgreSQL database without
 
 --
 
+> [**!NOTE**]
+> **DPP plugin upgrade: PostgreSQL volume reset required**
+>
+> If you are upgrading from a previous version of the DPP plugin, the PostgreSQL schema has changed. Remove the existing PostgreSQL volume before restarting:
+>
+> ```bash
+> docker compose down -v
+> docker compose up -d
+> ```
+> 
+> **Warning:** `docker compose down -v` permanently deletes the existing PostgreSQL data. Back up any data you need before running this command.
+
+
 ## Additional Notes
 
 ### PostgreSQL Database (Plugin)
