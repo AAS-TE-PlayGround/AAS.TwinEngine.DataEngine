@@ -177,7 +177,6 @@ PGAdmin provides a web-based interface to manage the PostgreSQL database without
 --
 
 > [!IMPORTANT]
-
 > **DPP plugin upgrade: PostgreSQL volume reset required**
 >
 > If you are upgrading from a previous version of the DPP plugin, the PostgreSQL schema has changed. Remove the existing PostgreSQL volume before restarting:
